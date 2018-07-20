@@ -15,7 +15,7 @@
     //定义一些API方法
     var _StringUtils = {
         //获取字符串长度：中文为2个英文字符。
-        getLength:function(str){
+        length:function(str){
             var j=0;
             for(var i=0;i<str.length;i++)
             {
@@ -23,6 +23,22 @@
                 else j=j+1;
             }
             return j;
+        },
+        //去除字符串左边的空格
+        leftTrim:function(str){
+            return str.replace(/(^\s*)/g, "");
+        },
+        //去除字符串右边的空格
+        rightTrim:function (str) {
+            return str.replace(/(\s*$)/g, "");
+        },
+        //去除字符串前后的空格
+        leftAndRightTrim:function (str) {
+            return str.replace(/(^\s*)|(\s*$)/g, "");
+        },
+        //去除字符串所有的空格
+        trim:function(str){
+            return str.replace(/\s|\xA0/g,"");
         },
         firstFunc:function(str){
             alert(str);
@@ -34,7 +50,31 @@
         }
     };
     //这里确定了插件的名称
-    this.StringUtils = _StringUtils;
+    //this.StringUtils = _StringUtils;
+    window.StringUtils = _StringUtils;
+
+    //扩展JavaScript原生String对象的方法
+    String.prototype.leftTrim = function()
+    {
+        return this.replace(/(^\s*)/g, "");
+    }
+
+    String.prototype.rightTrim = function()
+    {
+        return this.replace(/(\s*$)/g, "");
+    }
+
+    String.prototype.leftAndRightTrim = function()
+    {
+        return this.replace(/(^\s*)|(\s*$)/g, "");
+    }
+
+    String.prototype.trim = function()
+    {
+        return this.replace(/\s|\xA0/g,"");
+    }
+
+
 }(window,document));
 
 
