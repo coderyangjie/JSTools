@@ -40,6 +40,15 @@
         trim:function(str){
             return str.replace(/\s|\xA0/g,"");
         },
+        //随机生成指定长度的字符串,length 为长度
+        randomString:function(length){
+            var str = Math.random().toString(36).substr(2);
+            if (str.length >= length) {
+                return str.substr(0, length);
+            }
+            str += random(length - str.length);
+            return str;
+        },
         firstFunc:function(str){
             alert(str);
             return this;//返回当前方法
@@ -48,7 +57,18 @@
             alert("secondFunc");
             return this;//返回当前方法
         }
+
+
     };
+
+
+
+
+
+
+
+
+
     //这里确定了插件的名称
     //this.StringUtils = _StringUtils;
     window.StringUtils = _StringUtils;
