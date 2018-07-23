@@ -23,7 +23,7 @@
      * @param  {Number} max
      * @return {Number}
      */
-    function _randomNum(min, max) {
+    function _randomNum(min,max) {
         return Math.floor(min + Math.random() * (max - min));
     }
 
@@ -45,6 +45,8 @@
         }
         return num;
     }
+
+
 
 
     //这里确定了插件的名称
