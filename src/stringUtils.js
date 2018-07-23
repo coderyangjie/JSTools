@@ -15,7 +15,7 @@
     //定义一些API方法
     var _StringUtils = {
         //获取字符串长度：中文为2个英文字符。
-        length:function(str){
+        getLength:function(str){
             var j=0;
             for(var i=0;i<str.length;i++)
             {
