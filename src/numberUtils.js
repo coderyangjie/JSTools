@@ -13,9 +13,38 @@
 
     //定义一些API方法
     var _numberUtils = {
-
+        randomNum:_randomNum,
+        numToThousandsSeparator:_numToThousandsSeparator
     };
 
+    /**
+     * @desc 生成指定范围随机数
+     * @param  {Number} min
+     * @param  {Number} max
+     * @return {Number}
+     */
+    function _randomNum(min,max) {
+        return Math.floor(min + Math.random() * (max - min));
+    }
+
+    /**
+     * 给数字加千分位显示
+     * @param num 需要加千分位的数字
+     */
+    function _numToThousandsSeparator(num){
+        //如果传进来的值不是数字，则原值返回
+        if (!Number(num) || num < 1000) {
+            return num;
+        }
+        num = num + "";
+        var re = /(-?\d+)(\d{3})/;
+        //正则判断
+        while (re.test(num)) {
+            //符合条件则进行替换
+            num = num.replace(re, "$1,$2");
+        }
+        return num;
+    }
 
 
 
