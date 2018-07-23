@@ -8,7 +8,7 @@
 (function(window,document){
     //定义一些默认参数
     var _options={
-        default_word:"default hello"
+        parameterName:"parameterValue"
 
     }
 
