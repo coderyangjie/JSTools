@@ -5,8 +5,14 @@
     <title>dateUtilsDemo</title>
     <script type="text/javascript" src="js/dateUtils.js"></script>
     <script type="text/javascript">
-        //测试dateFormat(date,format)方法
-        alert(dateUtils.dateFormat(new Date(),"yyyy/MM/dd hh:mm:ss"));
+        //console.log(dateUtils.formatDate());
+       // console.log(dateUtils.formatDate(new Date(), 'yyyy-MM-dd'));
+        //console.log(dateUtils.formatDate(new Date(), 'yyyy-MM-dd 第q季度 www HH:mm:ss:SSS'));
+       // console.log(dateUtils.formatDate(1472793615764));
+        //
+       // console.log(dateUtils.parseDateString('2016-08-11'));
+        //console.log(dateUtils.parseDateString('2016-08-11 13:28:43', 'yyyy-MM-dd HH:mm:ss'));
+        alert(dateUtils.dateStringToChinese("2018-07-23"));
     </script>
 </head>
 <body>
