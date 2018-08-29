@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>formUtilsDemo</title>
+    <script type="text/javascript" src="js/formUtils.js" charset="UTF-8"></script>
+    <style type="text/css">
+        .space{
+            line-height:45px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <table width="100%" border="0"  cellspacing="0" cellpadding="0" align=center>
+            <tr>
+                <td style="padding-left:15%;padding-right:15%;">
+
+                    <form id="submitForm" action="">
+                        <table width="100%" border="0"  align="center" cellspacing="0" cellpadding="0">
+                            <tr class="space">
+                                <td width="14%" align="right">
+                                    账户名称：<font color="red">*</font>
+                                </td>
+                                <td width="20%">
+                                    <input type="text" name="accountname" id="accountname" style="width:100%;"/>
+                                </td>
+                                <td width="13%" align="right">密&nbsp;&nbsp;&nbsp;&nbsp;码：<font color="red">*</font></td>
+                                <td width="20%">
+                                    <input type="password" id="password" name="password" style="width:100%;"/>
+
+                                </td>
+                                <td width="13%" align="right">性&nbsp;&nbsp;&nbsp;&nbsp;别：<font color="red">*</font></td>
+                                <td width="20%">
+                                    <input type="radio" checked="checked" name="sex" value="male" />男性
+                                    <input type="radio" name="sex" value="female" />女性
+                                </td>
+
+                            </tr>
+
+                            <tr class="space">
+
+                                <td width="14%" align="right">兴趣爱好：<font color="red">*</font></td>
+                                <td colspan="5" width="86%" >
+                                    <input name="favorite" type="checkbox" value="徒步" />徒步
+                                    <input name="favorite" type="checkbox" value="读书" />读书
+                                    <input name="favorite" type="checkbox" value="跑步" />跑步
+                                    <input name="favorite" type="checkbox" value="看电影" />看电影
+                                </td>
+
+                            </tr>
+
+                            <tr class="space">
+                                <td width="14%" align="right">国&nbsp;&nbsp;&nbsp;&nbsp;籍：&nbsp;</td>
+                                <td width="20%">
+                                    <select name="country" id="country" style="width:100%;">
+                                        <option value="">请选择国籍</option>
+                                        <option value="中国">中国</option>
+                                        <option value="美国">美国</option>
+                                        <option value="法国">法国</option>
+                                        <option value="意大利">意大利</option>
+                                    </select>
+                                </td>
+                                <td width="13%" align="right"></td>
+                                <td width="20%">
+
+                                </td>
+                                <td width="13%" align="right"></td>
+                                <td width="20%">
+
+                                </td>
+                            </tr>
+
+                            <tr class="space">
+                                <td width="14%" align="right">文件上传：<font color="red">*</font></td>
+                                <td colspan="5" width="86%" >
+                                    <input type="file" />
+                                </td>
+
+                            </tr>
+                            <tr class="space">
+
+                                <td width="14%" align="right">备&nbsp;&nbsp;&nbsp;&nbsp;注：&nbsp;</td>
+                                <td colspan="5" width="86%" >
+                                    <textarea name = "bz" id="bz" rows="3" style="width:90%;">
+                                    </textarea>
+                                </td>
+
+                            </tr>
+                            <tr class="space">
+                                <td width="14%" align="right">创建时间：&nbsp;</td>
+                                <td width="20%">
+                                    <input type="date" id="createtime" name="createtime"/>
+                                </td>
+                                <td width="13%" align="right">年&nbsp;&nbsp;&nbsp;&nbsp;龄：&nbsp;</td>
+                                <td width="20%">
+                                    <input type="number" id="age" name="age" />
+                                </td>
+                                <td width="13%" align="right">喜欢的颜色：&nbsp;</td>
+                                <td width="20%">
+                                    <input type="color" id="fcolor" name="fcolor"/>
+                                </td>
+                            </tr>
+
+                            <tr class="space">
+                                <td colspan="6" align="center">
+                                    <input type="submit" value="提交"/>
+                                    <input type="reset" value="重置" />
+                                    <input type="button" value="确定" onclick="formSubmitOnclick()"/>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </form>
+                </td>
+            </tr>
+        </table>
+
+    </div>
+</body>
+<iframe id="theIframe" name="theIframe" width=0 height=0 src=""></iframe>
+<script type="text/javascript">
+
+function formSubmitOnclick(){
+
+ /*   var formJson = formUtils.serializeJson("submitForm");
+    alert(formJson);
+    alert(formJson.accountname);*/
+
+}
+
+</script>
+</html>
