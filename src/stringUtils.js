@@ -65,15 +65,8 @@
         isLowerCase:_isLowerCase,
         digitToChineseNum:_digitToChineseNum,
         changeCase:_changeCase,
+        isEmpty:_isEmpty
 
-        firstFunc:function(str){
-            alert(str);
-            return this;//返回当前方法
-        },
-        secondFunc:function(){
-            alert("secondFunc");
-            return this;//返回当前方法
-        }
 
 
     };
@@ -347,6 +340,20 @@
         }
     }
 
+    /**
+     * 判断输入字符串或对象是否为空、空格、null以及undefined
+     * @param obj
+     */
+    function _isEmpty(obj){
+        if(!obj || obj==="" ){
+            return true;
+        }else{
+            if(obj.toString().match(/^[ ]*$/)){
+                return true;
+            }
+            return false;
+        }
+    }
 
 
     //这里确定了插件的名称
