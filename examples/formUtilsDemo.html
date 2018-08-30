@@ -23,7 +23,7 @@
                                     账户名称：<font color="red">*</font>
                                 </td>
                                 <td width="20%">
-                                    <input type="text" name="accountname" id="accountname" style="width:100%;"/>
+                                    <input type="text" name="accountname" id="accountname" style="width:100%;"  zdmc="账户名称" zdlx="varchar" maxlength="10" isnull="0" isjczf="1"  />
                                 </td>
                                 <td width="13%" align="right">密&nbsp;&nbsp;&nbsp;&nbsp;码：<font color="red">*</font></td>
                                 <td width="20%">
@@ -120,12 +120,31 @@
 </body>
 <iframe id="theIframe" name="theIframe" width=0 height=0 src=""></iframe>
 <script type="text/javascript">
-
+    /**
+     * formUtils.isSubmit(strformid);
+     * 功能：根据自定义属性校验Form表单
+     * 校验From表单说明：
+     * 1、给form表单元素加上自定义的属性才会进行表单校验。
+     * 2、每个表单元素自定义的属性包括：
+     *  diy：表单元素校验不通过时的自定义的提示语，有此属性，则显示自定义提示语，否则显示默认：字段名称+“不能为空,带*为必填项！”；
+     *  zdmc：字段名称，用于默认提示语；
+     *  zdlx：字段类型。字段类型的值包括：varchar，bigint，int,float，email，date
+     *  isnull：判断字段是否可以为空 （0 不能为空 1 可以为空）。
+     *  maxLength：限制输入字符串的最大长度。当zdlx为varchar时使用。
+     *  iszw：是否判断中文。暂无此校验。
+     *  isjczf：是否检测非法字符。(1 需要检测字符，且不可为非法字符；0 不需要检测字符，可以为非法字符)
+     *  maxvalue：设置数字类型的最大值。当字段类型为bigint，int,float有效。
+     *  minvalue：设置数字类型最小值。当字段类型为bigint，int,float有效。
+     * @param strformid  表单id
+     * @returns {boolean} 如果返回true则校验成功，否则失败
+     */
 function formSubmitOnclick(){
-
- /*   var formJson = formUtils.serializeJson("submitForm");
-    alert(formJson);
-    alert(formJson.accountname);*/
+    if(formUtils.isSubmit("submitForm")){
+        alert("表单校验成功！");
+    }
+  var formJson = formUtils.serializeJson("submitForm");
+    console.log(formJson);
+    alert(formJson.accountname);
 
 }
 
